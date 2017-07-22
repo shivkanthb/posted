@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title>{{ config.title }}</title>
+</head>
+<body>
+<h1>{{ config.heading }}</h1>
+<div class="posts-section">
+	{% for post in posts %}
+	<div class=post>
+		{% autoescape false %}{{ post }}{% endautoescape %}
+	</div>
+	{% endfor %}
+</div>
+</body>
+</html>

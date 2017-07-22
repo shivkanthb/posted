@@ -1,0 +1,21 @@
+{
+  "name": "posted",
+  "version": "1.0.0",
+  "description": "make product update pages great again",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "js-yaml": "^3.5.5",
+    "marked": "^0.3.5",
+    "gulp-data": "^1.2.1",
+    "gulp-swig": "^0.8.0"
+  },
+  "scripts": {
+    "build": "gulp"
+  },
+  "author": "shiv",
+  "license": "ISC"
+}
