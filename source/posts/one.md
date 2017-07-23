@@ -2,8 +2,9 @@
 <p class="post-meta">posted at 10:00 am</p>
 ```
 int x = 1;
-```  
-### Sub heading
+``` 
+
+#### Sample table
 
 | Tables   |      Are      |  Cool |
 |----------|:-------------:|------:|
