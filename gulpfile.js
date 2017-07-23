@@ -5,9 +5,11 @@ var swig = require('gulp-swig');
 var yaml = require('js-yaml');
 var del = require('del')
 var gutil = require('gulp-util');
+var open = require('gulp-open');
 var data = require('gulp-data');
 var sass = require('gulp-sass');
 var marked = require('marked');
+var gls = require('gulp-live-server');
 var renderer = new marked.Renderer();
 
 var readIndexYml = function() {
@@ -32,22 +34,22 @@ gulp.task('clean', function() {
 
 gulp.task('fonts', function () {
   return gulp.src('./source/fonts/**/*').pipe(gulp.dest('build/fonts'));
-});
+})
 
 gulp.task('images', function () {
   return gulp.src('./source/images/**/*').pipe(gulp.dest('build/images'));
-});
+})
 
 gulp.task('css', function () {
   return gulp.src('./source/css/*.css')
     .pipe(gulp.dest('./build/css'))
-});
+})
 
 gulp.task('scss', function () {
   return gulp.src('./source/stylesheets/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./build/css'))
-});
+})
 
 gulp.task('html', function () {
   var yaml_data = getPageData();
@@ -56,6 +58,22 @@ gulp.task('html', function () {
   	.pipe(data(yaml_data))
     .pipe(swig())
   	.pipe(gulp.dest('./build/'))
-});
+})
 
 gulp.task('default', ['clean', 'fonts', 'images', 'scss', 'html'])
+
+gulp.task('serve', ['default'], function() {
+
+  gulp.watch(['./source/*.html', './source/includes/**/*'], ['html']);
+  gulp.watch('./source/stylesheets/**/*', ['sass']);
+  gulp.watch('./source/index.yml', ['html']);
+
+  var server = gls.static('build', 8080);
+  server.start();
+
+  gulp.watch(['build/**/*'], function (file) {
+    server.notify.apply(server, [file]);
+  });
+
+  gulp.src(__filename).pipe(open({uri: 'http://localhost:8080'}));
+});
