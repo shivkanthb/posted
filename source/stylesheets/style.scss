@@ -175,7 +175,8 @@ footer {
 
 		img {
 		    display: block;
-		    margin: 0 auto;
+		    margin: 20px auto;
+        max-width: 100%;
 		}
 
 		pre {
@@ -244,7 +245,7 @@ footer {
 		}
 
 		.post-meta {
-		    margin: -15px 0 0 0;
+		    margin: -5px 0 0 0;
 		    color: #9eabb3;
 		    font-size: 12px;
 		}
