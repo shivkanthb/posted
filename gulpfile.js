@@ -6,6 +6,7 @@ var yaml = require('js-yaml');
 var del = require('del')
 var gutil = require('gulp-util');
 var data = require('gulp-data');
+var sass = require('gulp-sass');
 var marked = require('marked');
 var renderer = new marked.Renderer();
 
@@ -26,16 +27,35 @@ var getPageData = function() {
 }
 
 gulp.task('clean', function() {
-	return del(['build/*']);	
+	return del(['build/*'])	
 })
+
+gulp.task('fonts', function () {
+  return gulp.src('./source/fonts/**/*').pipe(gulp.dest('build/fonts'));
+});
+
+gulp.task('images', function () {
+  return gulp.src('./source/images/**/*').pipe(gulp.dest('build/images'));
+});
+
+gulp.task('css', function () {
+  return gulp.src('./source/css/*.css')
+    .pipe(gulp.dest('./build/css'))
+});
+
+gulp.task('scss', function () {
+  return gulp.src('./source/stylesheets/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./build/css'))
+});
 
 gulp.task('html', function () {
   var yaml_data = getPageData();
-  console.log(yaml_data);
+  // console.log(yaml_data);
   return gulp.src('./source/*.html')
   	.pipe(data(yaml_data))
     .pipe(swig())
-  	.pipe(gulp.dest('./build/'));
+  	.pipe(gulp.dest('./build/'))
 });
 
-gulp.task('default', ['clean','html'])
+gulp.task('default', ['clean', 'fonts', 'images', 'scss', 'html'])

@@ -1,16 +1,16 @@
 Botlytics
-=========
+---------
 
 Node module for Botlytics API.
 
 Visit the official HTTP docs [here](http://botlytics.api-docs.io/)
 
-## Installation
+### Installation
 
   `npm install botlytics`
 
 
-## Usage
+### Usage
 ```
 var botlytics = require('botlytics');
 
@@ -37,7 +37,7 @@ botlytics.incoming({text: <message>, conversation_identifier: <conversation_id>,
 botlytics.outgoing({text: <message>, conversation_identifier: <conversation_id>, ... }, function(err, response, body){} );
 ```  
         
-## Example
+### Example
 ```
 var botlytics = require('botlytics');
 
@@ -63,10 +63,10 @@ botlytics.incoming(dict, function(err,res, body){
   "created_at": "2016-05-07T04:42:58.129Z"
 }
 ```  
-## Tests
+### Tests
 
   `npm test`
 
-## Contributing
+### Contributing
 
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
