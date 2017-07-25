@@ -46,6 +46,11 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./build/css'))
 })
 
+gulp.task('js', function () {
+  return gulp.src('./source/js/*.js')
+    .pipe(gulp.dest('./build/js'))
+})
+
 gulp.task('scss', function () {
   return gulp.src('./source/stylesheets/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -54,7 +59,6 @@ gulp.task('scss', function () {
 
 gulp.task('html', function () {
   var yaml_data = getPageData();
-  // console.log(yaml_data);
   return gulp.src('./source/*.html')
   	.pipe(data(yaml_data))
     .pipe(swig())
@@ -73,6 +77,8 @@ function create(post, index) {
   var post_data = yaml_data;
   var temp = [post]
   post_data['posts'] = temp;
+  post_data['config']['single_post'] = true;
+  post_data['config']['title'] = post_data['config']['posts'][index];
   return gulp.src('./source/index.html')
     .pipe(data(post_data))
     .pipe(swig())
@@ -81,7 +87,7 @@ function create(post, index) {
 }
 
 gulp.task('default', ['clean'], function() {
-  gulp.start(['fonts', 'images', 'scss', 'posts_html', 'html'])
+  gulp.start(['fonts', 'images', 'scss', 'js', 'posts_html', 'html'])
 })
 
 gulp.task('serve', ['default'], function() {

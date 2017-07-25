@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "make product update pages great again",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.15.3"
+  },
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.1",
