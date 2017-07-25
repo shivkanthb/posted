@@ -10,6 +10,7 @@ var data = require('gulp-data');
 var sass = require('gulp-sass');
 var marked = require('marked');
 var gls = require('gulp-live-server');
+var rename = require("gulp-rename");
 var renderer = new marked.Renderer();
 
 var readIndexYml = function() {
@@ -60,7 +61,28 @@ gulp.task('html', function () {
   	.pipe(gulp.dest('./build/'))
 })
 
-gulp.task('default', ['clean', 'fonts', 'images', 'scss', 'html'])
+gulp.task('posts_html', function (done) {
+  var yaml_data = getPageData()
+  var post_data = yaml_data;
+  yaml_data['posts'].forEach(create);
+  done();
+})
+
+function create(post, index) {
+  var yaml_data = getPageData()
+  var post_data = yaml_data;
+  var temp = [post]
+  post_data['posts'] = temp;
+  return gulp.src('./source/index.html')
+    .pipe(data(post_data))
+    .pipe(swig())
+    .pipe(rename(post_data['config']['posts'][index]+'.html'))
+    .pipe(gulp.dest('./build/posts/'))
+}
+
+gulp.task('default', ['clean'], function() {
+  gulp.start(['fonts', 'images', 'scss', 'posts_html', 'html'])
+})
 
 gulp.task('serve', ['default'], function() {
 
