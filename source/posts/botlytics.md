@@ -1,5 +1,6 @@
 Botlytics
 ---------
+<p class="post-meta">posted at 10:00 am</p>
 
 Node module for Botlytics API.
 

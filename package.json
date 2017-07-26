@@ -11,7 +11,10 @@
     "gulp": "^3.9.1",
     "gulp-data": "^1.2.1",
     "gulp-live-server": "0.0.31",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.2.1",
     "gulp-open": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-swig": "^0.8.0",
@@ -20,7 +23,9 @@
     "marked": "^0.3.5"
   },
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "serve": "gulp serve",
+    "start": "node server.js"
   },
   "author": "shiv",
   "license": "ISC"

@@ -169,8 +169,9 @@ footer {
 		}
 
 		p {
-	        margin: 0px 0 16px;
+	        margin: 10px 0 10px;
 	        color: #333;
+	        line-height: 1.4em;
 		}
 
 		img, iframe {
@@ -235,17 +236,15 @@ footer {
 
 		blockquote {
 		    &>p {
-				background-color: $code-annotation-bg;
+				background-color: $main-bg;
 				border-radius: 5px;
 				padding: $code-annotation-padding;
-				color: #ccc;
-				border-top: 1px solid #000;
-				border-bottom: 1px solid #404040;
+				color: #000;
 		    }
 		}
-
+		
 		.post-meta {
-		    margin: -5px 0 0 0;
+		    margin: -5px 0 20px 0;
 		    color: #9eabb3;
 		    font-size: 12px;
 		}

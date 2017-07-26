@@ -11,6 +11,10 @@ var sass = require('gulp-sass');
 var marked = require('marked');
 var gls = require('gulp-live-server');
 var rename = require("gulp-rename");
+var nodemon = require('gulp-nodemon'),
+  plumber = require('gulp-plumber'),
+  livereload = require('gulp-livereload');
+
 var renderer = new marked.Renderer();
 
 var readIndexYml = function() {
@@ -105,3 +109,21 @@ gulp.task('serve', ['default'], function() {
 
   gulp.src(__filename).pipe(open({uri: 'http://localhost:8080'}));
 });
+
+gulp.task('dev', function () {
+  livereload.listen();
+  nodemon({
+    script: 'server.js',
+    ext: 'js scss md',
+    stdout: false
+  }).on('readable', function () {
+    this.stdout.on('data', function (chunk) {
+      if(/^Express server listening on port/.test(chunk)){
+        livereload.changed(__dirname);
+      }
+    });
+    this.stdout.pipe(process.stdout);
+    this.stderr.pipe(process.stderr);
+  });
+});
+

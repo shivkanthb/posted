@@ -1,5 +1,7 @@
 Post title
 ------------
+<p class="post-meta">posted at 10:00 am</p>
+
 Paragraphs are separated by a blank line.
 
 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
