@@ -5,18 +5,20 @@
 
 <p align="center">Create beautiful product update pages.</p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/shivkanthb/posted/master/source/images/screenshot.png" width=700 alt="Screenshot Example."></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shivkanthb/posted/master/source/images/example-screenshot.png" width=700 alt="Screenshot Example."></p>
 
-#### Commands
+### Getting Set Up
 
-Install the dependencies
+1. Fork this repository on Github.
+2. Clone repo `git clone https://github.com/YOURUSERNAME/posted.git`
+3. `cd posted`
+4. Initialize and build :
 ```
 npm install
-```
-
-Compile posts to static site in `./build`:
-
-```shell
 npm run build
+npm start
 ```
+
+Then go to http://localhost:3000/ to view your posts. 
+
 
