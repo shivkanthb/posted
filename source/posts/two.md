@@ -1,6 +1,6 @@
 Post title
 ------------
-<p class="post-meta">posted at 10:00 am</p>
+<p class="post-meta">posted at 5:00 pm</p>
 
 Paragraphs are separated by a blank line.
 

@@ -1,4 +1,4 @@
-## Design a Custom Geofilter from Your Phone!
+<h2 class="heading" data-content="snapchat">Design a Custom Geofilter from Your Phone!</h2>
 <p class="post-meta">June 28, 2017</p>
 
 ![geofiler-snapchat](images/snapchat.jpg "Geofilter")

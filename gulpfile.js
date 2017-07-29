@@ -96,7 +96,7 @@ gulp.task('default', ['clean'], function() {
 
 gulp.task('serve', ['default'], function() {
 
-  gulp.watch(['./source/*.html', './source/includes/**/*'], ['html']);
+  gulp.watch(['./source/*.html', './source/posts/*.md'], ['html']);
   gulp.watch('./source/stylesheets/**/*', ['sass']);
   gulp.watch('./source/index.yml', ['html']);
 

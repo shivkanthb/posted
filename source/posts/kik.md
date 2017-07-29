@@ -1,4 +1,4 @@
-## Introducing: Full screen mode and stickers for video chat!
+<h2 class="heading" data-content="kik">Introducing: Full screen mode and stickers for video chat!</h2>
 <p class="post-meta">July 21, 2017</p>
 
 Back in December of 2016, we released the highly anticipated video chat feature. It was such a success that we decided to Kik things up a notch and introduce full screen video chat. Now you can see your friends’ faces in full-screen HD without having to squint! 😅

@@ -1,4 +1,4 @@
-## This is the title of the post one
+<h2 class="heading" data-content="one">This is post one</h2>
 <p class="post-meta">posted at 10:00 am</p>
 
 ```
