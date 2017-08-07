@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shivkanthb/posted/master/source/images/_logo.png" alt="Posted logo" width="50">
+  <img src="https://raw.githubusercontent.com/shivkanthb/posted/master/source/images/Logo.png" alt="Posted logo" width="50">
   <br>
 </p>
 <p align="center">Create beautiful product update pages.</p>
