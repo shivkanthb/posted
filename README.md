@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shivkanthb/posted/master/source/images/Logo.png" alt="Posted logo" width="50">
+  <img src="https://raw.githubusercontent.com/shivkanthb/posted/master/source/images/logo.png" alt="Posted logo" width="50">
   <br>
 </p>
 <p align="center">Create beautiful product update pages.</p>
@@ -48,8 +48,10 @@ Rules for Markdown - Coming soon.
 
 #### Configs
 The basic config info is on `./source/index.yml`
-More info coming soon. 
-Note: The **order** used in the `posts` key is the order in which the posts are displayed on the generated site. 
+- title: The value enclosed in `<title></title>` for your page.
+- site_url: The url for the `back to site` button
+- posts: The posts to be displayed on the main page. The name of each post must match the name of the .md file in the `posts` folder.
+> Note: The **order** used in the `posts` key is the order in which the posts are displayed on the generated site. 
 
 
 ### Contributing
