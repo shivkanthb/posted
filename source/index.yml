@@ -4,9 +4,10 @@ heading: welcome
 
 site_url: https://shivkanth.com
 
+type: blog
+
 posts:
   - kik
   - snapchat
   - one
-  - two
   - botlytics

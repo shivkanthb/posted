@@ -50,6 +50,7 @@ Rules for Markdown - Coming soon.
 The basic config info is on `./source/index.yml`
 - title: The value enclosed in `<title></title>` for your page.
 - site_url: The url for the `back to site` button
+- type: blog | changelog
 - posts: The posts to be displayed on the main page. The name of each post must match the name of the .md file in the `posts` folder.
 > Note: The **order** used in the `posts` key is the order in which the posts are displayed on the generated site. 
 
